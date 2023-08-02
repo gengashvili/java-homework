@@ -6,12 +6,31 @@ import ge.tbc.testautomation.exceptionsStringOperationsRegex.LimitException;
 import ge.tbc.testautomation.exceptionsStringOperationsRegex.RadiusException;
 
 
-public class Circle extends Figure implements IResizableCircle, IValidCircle {
+public class Circle extends Figure implements IResizableCircle, IValidCircle, Comparable<Circle> {
     private double radius;
 
     public Circle(double radius) {
         this.radius = radius;
     }
+
+
+    // containersRegex homework
+    @Override
+    public String toString() {
+        return "[Circle: radius - " + this.radius + "]";
+    }
+
+    @Override
+    public int compareTo(Circle o) {
+        if(this.radius > o.radius) {
+            return 1;
+        } else if (this.radius < o.radius) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+
 
     @Override
     public double getArea() {
@@ -43,4 +62,5 @@ public class Circle extends Figure implements IResizableCircle, IValidCircle {
     public boolean validateCircle(Circle circle) {
         return circle.radius > 0;
     }
+
 }
