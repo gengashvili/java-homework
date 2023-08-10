@@ -14,11 +14,8 @@ public class Circle extends Figure implements IResizableCircle, IValidCircle, Co
     }
 
 
-    // containersRegex homework
-    @Override
-    public String toString() {
-        return "[Circle: radius - " + this.radius + "]";
-    }
+
+
 
     @Override
     public int compareTo(Circle o) {
@@ -63,4 +60,8 @@ public class Circle extends Figure implements IResizableCircle, IValidCircle, Co
         return circle.radius > 0;
     }
 
+    @Override
+    public String toString() {
+        return "Circle {" + " radius = " + radius + " }";
+    }
 }
